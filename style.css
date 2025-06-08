@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #ffe4e1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#app {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    border: 4px solid #ffb6c1;
+    background: #fff0f5;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#emoji-picker {
+    width: 20%;
+    background: #ffb6c1;
+    padding: 10px;
+    box-sizing: border-box;
+    color: white;
+}
+
+#emoji-picker h2 {
+    text-align: center;
+}
+
+.emoji-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.emoji {
+    font-size: 2rem;
+    cursor: grab;
+}
+
+#canvas-wrapper {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#clear-button {
+    background: #ff69b4;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#canvas {
+    flex: 1;
+    background: #fff;
+    border-top: 4px solid #ffb6c1;
+    position: relative;
+}
+
+.drop-zone {
+    min-height: 400px;
+}
+
+.dropped-emoji {
+    position: absolute;
+    font-size: 2rem;
+    pointer-events: none;
+}
