@@ -26,6 +26,12 @@ canvas.addEventListener('drop', e => {
             const size = parseFloat(window.getComputedStyle(span).fontSize);
             span.style.fontSize = size + 10 + 'px';
         });
+        span.addEventListener('wheel', e => {
+            e.preventDefault();
+            const size = parseFloat(window.getComputedStyle(span).fontSize);
+            const newSize = size + (e.deltaY < 0 ? 2 : -2);
+            span.style.fontSize = Math.max(10, newSize) + 'px';
+        });
         canvas.appendChild(span);
     }
 });

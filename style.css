@@ -82,4 +82,5 @@ body {
     font-size: 2rem;
     pointer-events: auto;
     user-select: none;
+    cursor: pointer;
 }
