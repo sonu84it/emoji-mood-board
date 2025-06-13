@@ -1,6 +1,7 @@
 const emojis = document.querySelectorAll('.emoji');
 const canvas = document.getElementById('canvas');
 const clearButton = document.getElementById('clear-button');
+const downloadButton = document.getElementById('download-button');
 
 emojis.forEach(emoji => {
     emoji.addEventListener('dragstart', e => {
@@ -21,10 +22,24 @@ canvas.addEventListener('drop', e => {
         span.textContent = data;
         span.style.left = e.offsetX + 'px';
         span.style.top = e.offsetY + 'px';
+        span.addEventListener('dblclick', () => {
+            const size = parseFloat(window.getComputedStyle(span).fontSize);
+            span.style.fontSize = size + 10 + 'px';
+        });
         canvas.appendChild(span);
     }
 });
 
 clearButton.addEventListener('click', () => {
     canvas.innerHTML = '';
+});
+
+downloadButton.addEventListener('click', () => {
+    if (typeof html2canvas === 'undefined') return;
+    html2canvas(canvas).then(c => {
+        const link = document.createElement('a');
+        link.download = 'emoji-mood-board.png';
+        link.href = c.toDataURL('image/png');
+        link.click();
+    });
 });
