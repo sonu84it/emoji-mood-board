@@ -50,13 +50,20 @@ body {
     flex-direction: column;
 }
 
-#clear-button {
+#clear-button,
+#download-button {
     background: #ff69b4;
     color: white;
     border: none;
     padding: 10px;
     font-size: 1rem;
     cursor: pointer;
+}
+
+.button-bar {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
 }
 
 #canvas {
@@ -73,5 +80,6 @@ body {
 .dropped-emoji {
     position: absolute;
     font-size: 2rem;
-    pointer-events: none;
+    pointer-events: auto;
+    user-select: none;
 }
